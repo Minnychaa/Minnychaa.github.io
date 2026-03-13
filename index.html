@@ -3,161 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu M. Lama | Survey Corps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <title>Manu M. Lama | Attack on Titan Dossier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --corps-green: #2d4a3e;
-            --corps-blue: #3d5a80;
-            --titan-gold: #d4af37;
-            --parchment: #f4f1ea;
+            --titan-red: #8b0000;
+            --survey-green: #1b2e1e;
+            --ink-black: #0a0a0a;
+            --paper: #d9d4c7;
+            --accent-gold: #c5a059;
         }
 
         body {
             margin: 0;
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.alphacoders.com/605/605592.jpg'); /* AoT Forest Background */
+            font-family: 'Oswald', sans-serif;
+            background-color: var(--ink-black);
+            background-image: 
+                linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.8)),
+                url('https://wallpaperaccess.com/full/3663733.jpg'); /* Eren Founding Titan Vibe */
             background-size: cover;
             background-attachment: fixed;
-            color: var(--parchment);
-            line-height: 1.6;
+            color: var(--paper);
         }
 
+        /* Top Dossier Header */
         header {
             text-align: center;
-            padding: 100px 20px;
-            background: rgba(45, 74, 62, 0.4);
-            backdrop-filter: blur(5px);
-            border-bottom: 3px solid var(--titan-gold);
-        }
-
-        /* The Wings of Freedom Glow Effect */
-        .profile-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .profile {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid var(--titan-gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            object-fit: cover;
-        }
-
-        .profile:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 50px;
-            margin: 20px 0 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            letter-spacing: 3px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--titan-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 850px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            border-left: 5px solid var(--corps-blue);
-            padding-left: 15px;
-            margin-top: 50px;
-            color: var(--titan-gold);
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: "⚔️";
-            margin-left: 10px;
-            font-size: 1.2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(12px);
-            padding: 30px;
-            margin-top: 15px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            padding: 80px 20px;
+            border-bottom: 4px solid var(--titan-red);
+            background: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.2));
             position: relative;
             overflow: hidden;
         }
 
-        /* "Slicing" effect on hover */
-        .card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateX(10px);
-            border-left: 5px solid var(--titan-gold);
+        /* Eren "Attack Titan" Background Text Overlay */
+        header::before {
+            content: "ATTACK TITAN";
+            position: absolute;
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            top: 0;
+            left: -50px;
+            z-index: 0;
         }
 
-        .skills span {
+        .profile-wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile {
+            width: 200px;
+            height: 200px;
+            border: 4px solid var(--paper);
+            outline: 8px solid var(--titan-red);
+            margin-bottom: 20px;
+            filter: grayscale(40%) contrast(110%);
+            transition: 0.5s;
+        }
+
+        .profile:hover {
+            filter: grayscale(0%) sepia(20%);
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--paper);
+            text-shadow: 4px 4px 0px var(--titan-red);
+        }
+
+        .subtitle {
+            font-family: 'Special Elite', cursive; /* Typewriter style */
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            background: rgba(0,0,0,0.6);
             display: inline-block;
-            background: var(--corps-green);
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        /* Infographic Card Style */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border-left: 10px solid var(--titan-red);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Angled bottom */
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--paper);
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        /* Grid for Technical Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .skills-grid span {
+            background: var(--titan-red);
             color: white;
-            padding: 8px 15px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid var(--titan-gold);
-            transition: 0.3s;
-        }
-
-        .skills span:hover {
-            background: var(--corps-blue);
-            transform: translateY(-3px);
-        }
-
-        a {
-            color: var(--titan-gold);
-            text-decoration: none;
+            padding: 10px;
+            text-align: center;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
-        a:hover {
-            color: white;
-            text-shadow: 0 0 10px var(--titan-gold);
+        /* Action Button */
+        .btn-expedition {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--paper);
+            border: 2px solid var(--paper);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-expedition:hover {
+            background: var(--paper);
+            color: var(--ink-black);
+            box-shadow: 0 0 20px var(--titan-red);
         }
 
         footer {
             text-align: center;
-            padding: 50px;
-            margin-top: 60px;
-            background: rgba(15, 23, 42, 0.9);
-            border-top: 2px solid var(--corps-green);
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Add a "Shinzou wo Sasageyo" button style */
-        .resume-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--corps-blue);
-            color: white !important;
-            border-radius: 5px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 2px solid var(--titan-gold);
+            padding: 100px 20px;
+            font-family: 'Special Elite', cursive;
+            opacity: 0.6;
         }
 
     </style>
@@ -165,62 +164,67 @@
 <body>
 
 <header>
-    <div class="profile-container">
-        <img src="profile.jpg" class="profile" alt="Manu Maya Lama">
+    <div class="profile-wrap">
+        <img src="profile.jpg" class="profile" alt="Manu Lama (MINNY)">
+        <h1>Manu Maya Lama</h1>
+        <p class="subtitle">Unit: Biomedical Engineering | Cardiac Research</p>
     </div>
-    <h1>Manu Maya Lama</h1>
-    <p class="subtitle">Biomedical Engineer | Survey Corps CRM Trainee</p>
 </header>
 
 <section>
-    <h2>About Me</h2>
+    <h2>Personnel Dossier</h2>
     <div class="card">
-        Biological Engineering student at the University of Idaho. Like a scout beyond the walls, I explore <b>musculoskeletal tissue engineering</b> and <b>cardiac rhythm management</b>. Dedicated to humanity's progress through medical device innovation.
+        <p style="font-family: 'Special Elite', sans-serif;">
+            [SUBJECT DATA]: Biological Engineering student at the University of Idaho. 
+            Focusing on the "Evolution of the Human Machine." Researching musculoskeletal 
+            tissue engineering and cardiac rhythm management. Like the Scout Regiment, 
+            seeking knowledge beyond the current walls of medical technology.
+        </p>
     </div>
 
-    <h2>Research Expedition</h2>
+    <h2>Current Expedition</h2>
     <div class="card">
         <b>Tissue Engineering Laboratory</b><br>
-        Investigating cell self-assembly models—analyzing muscle formation with the precision of a Titan researcher. Mastered ELISA, BCA protein assays, and bioreactor calibration.
+        Studying muscle formation and cell self-assembly. Utilizing bioreactor calibration 
+        and microscopy to push the boundaries of human biology.
     </div>
 
-    <h2>Clinical Training</h2>
+    <h2>Clinical Intel</h2>
     <div class="card">
-        Shadowing at the Cardiac Catheterization Lab. Observing pacemaker procedures and lead implantations. Learning the "wiring" of the human heart.
+        Shadowing at the Cardiac Catheterization Lab. Observing pacemaker generator 
+        replacements and transvenous lead implantations. Analyzing device workflow 
+        with surgical precision.
     </div>
 
-    <h2>Publications</h2>
+    <h2>Technical Armory</h2>
     <div class="card">
-        <i>"Directed cell self-assembly to form tendon and muscle models..."</i><br>
-        <b>Journal of Biomechanical Engineering (2025)</b>
+        <div class="skills-grid">
+            <span>ECG Interpretation</span>
+            <span>CIED Fundamentals</span>
+            <span>SolidWorks</span>
+            <span>Arduino</span>
+            <span>MATLAB</span>
+            <span>Python</span>
+            <span>Microscopy</span>
+            <span>Cell Culture</span>
+        </div>
     </div>
 
-    <h2>Technical Arsenal</h2>
-    <div class="card skills">
-        <span>ECG Interpretation</span>
-        <span>Cardiac Electrophysiology</span>
-        <span>CIED Fundamentals</span>
-        <span>Mammalian Cell Culture</span>
-        <span>SolidWorks</span>
-        <span>Arduino</span>
-        <span>MATLAB</span>
-        <span>Python</span>
-    </div>
-
-    <h2>Military Documents</h2>
+    <h2>Expedition Reports (Resume)</h2>
     <div class="card" style="text-align: center;">
-        <a href="Manu_Resume.pdf" class="resume-btn" target="_blank">Download Dossier (Resume)</a>
+        <a href="Manu_Resume.pdf" class="btn-expedition" target="_blank">Access Dossier PDF</a>
     </div>
 
-    <h2>Contact The HQ</h2>
+    <h2>Contact Headquarters</h2>
     <div class="card">
-        LinkedIn: <a href="https://www.linkedin.com/in/minigna/" target="_blank">linkedin.com/in/minigna</a><br><br>
-        Email: <a href="mailto:lamamanu8970@gmail.com">lamamanu8970@gmail.com</a>
+        LinkedIn: <a href="https://www.linkedin.com/in/minigna/" style="color:var(--accent-gold)">View Profile</a><br>
+        Email: <a href="mailto:lamamanu8970@gmail.com" style="color:var(--accent-gold)">lamamanu8970@gmail.com</a>
     </div>
 </section>
 
 <footer>
-    DEDICATE YOUR HEART © 2026 MANU MAYA LAMA
+    "If you don't fight, you can't win." <br>
+    © 2026 MANU MAYA LAMA
 </footer>
 
 </body>
