@@ -1,27 +1,44 @@
+<!DOCTYPE html>
+<html>
+
 <head>
 <title>Manu Maya Lama</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#0f172a;
+font-family: Arial, sans-serif;
+background: linear-gradient(-45deg,#0f172a,#1e3a8a,#4c1d95,#0ea5e9);
+background-size:400% 400%;
+animation: gradientBG 15s ease infinite;
 color:white;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 header{
 text-align:center;
 padding:80px 20px;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
-header h1{
-font-size:50px;
-margin:0;
+.profile{
+width:180px;
+border-radius:50%;
+border:4px solid white;
+margin-bottom:20px;
 }
 
-header p{
+h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.subtitle{
 font-size:20px;
 opacity:0.9;
 }
@@ -29,18 +46,27 @@ opacity:0.9;
 section{
 max-width:900px;
 margin:auto;
-padding:60px 20px;
-}
-
-h2{
-color:#60a5fa;
+padding:40px 20px;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:25px;
 margin-top:20px;
-border-radius:10px;
+border-radius:12px;
+}
+
+h2{
+color:#38bdf8;
+}
+
+.skills span{
+display:inline-block;
+background:#1e293b;
+padding:8px 12px;
+margin:5px;
+border-radius:6px;
 }
 
 a{
@@ -51,18 +77,26 @@ text-decoration:none;
 footer{
 text-align:center;
 padding:30px;
+margin-top:40px;
 background:#020617;
-margin-top:50px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
+<img src="profile.jpg" class="profile">
+
 <h1>Manu Maya Lama</h1>
-<p>Biomedical Engineering Student | Cardiac Device & CRM Trainee</p>
+
+<p class="subtitle">
+Biomedical Engineering Student | Cardiac Rhythm Management Trainee
+</p>
+
 </header>
 
 <section>
@@ -70,62 +104,103 @@ margin-top:50px;
 <h2>About Me</h2>
 
 <div class="card">
-<p>
-Biological Engineering student at the University of Idaho researching tendon and muscle tissue engineering. 
-Currently training in cardiac rhythm management and implantable cardiac device technology with strong interest in 
-clinical medical devices and electrophysiology.
-</p>
+Biological Engineering student at the University of Idaho with research experience in 
+musculoskeletal tissue engineering and scaffold-free neo-muscle constructs. 
+Currently pursuing clinical exposure and training in cardiac rhythm management 
+and implantable cardiac device technology with strong interest in medical devices.
 </div>
 
 <h2>Research</h2>
 
 <div class="card">
-<p>
-Tissue Engineering Research Assistant working with scaffold-free neo-muscle constructs to study early musculoskeletal 
-tissue formation.
-</p>
+Undergraduate Research Assistant in the Tissue Engineering Laboratory at the University of Idaho.
+Worked on directed cell self-assembly models to study tendon and muscle formation and performed 
+ELISA, BCA protein assays, microscopy analysis, and bioreactor calibration.
 </div>
 
 <h2>Clinical Experience</h2>
 
 <div class="card">
-<p>
-Shadowing cardiologists and Medtronic clinical specialists in the cardiac catheterization lab observing pacemaker 
-implantation and CRM device workflows.
-</p>
+Shadowing cardiologists and Medtronic clinical specialists in the cardiac catheterization lab 
+observing pacemaker generator replacement and transvenous lead implantation procedures 
+and learning device workflow and remote monitoring configuration.
 </div>
 
 <h2>Publications</h2>
 
 <div class="card">
-<p>
-Directed cell self-assembly to form tendon and muscle models for studying early stages of musculoskeletal tissue formation.
-</p>
+Lama, M. M., et al. (2025).  
+Directed cell self-assembly to form tendon and muscle models for studying early stages of 
+musculoskeletal tissue formation.  
+Journal of Biomechanical Engineering.
+</div>
+
+<h2>Conferences</h2>
+
+<div class="card">
+Biomedical Engineering Society (BMES) Annual Meeting — San Diego (2025)  
+<br>
+Idaho Conference on Undergraduate Research (ICUR) — Boise (2025)
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
-<p>
-Arduino Biomedical Sensor Prototype<br>
-Potentiometer-based sensor system for biomedical signal experiments.
-</p>
+<b>Automated Wildlife Bio-Dispensing System</b><br>
+Arduino-based automated dispensing system designed for ecological wildlife research.
+</div>
+
+<div class="card">
+<b>MINIAID Voice Activated Health Companion</b><br>
+Low-cost healthcare assistant prototype integrating sensors and emergency alert systems.
+</div>
+
+<h2>Technical Skills</h2>
+
+<div class="card skills">
+
+<span>ECG Interpretation</span>
+<span>Cardiac Electrophysiology</span>
+<span>CIED Fundamentals</span>
+<span>Mammalian Cell Culture</span>
+<span>ELISA</span>
+<span>BCA Protein Assay</span>
+<span>Bioreactor Calibration</span>
+<span>Microscopy</span>
+<span>SolidWorks</span>
+<span>Arduino</span>
+<span>MATLAB</span>
+<span>Python</span>
+
+</div>
+
+<h2>Resume</h2>
+
+<div class="card">
+<a href="Manu_Resume.pdf" target="_blank">Download Resume</a>
 </div>
 
 <h2>Contact</h2>
 
 <div class="card">
-<p>
-LinkedIn: <a href="https://www.linkedin.com/in/minigna/">linkedin.com/in/minigna</a><br>
+LinkedIn: 
+<a href="https://www.linkedin.com/in/minigna/" target="_blank">
+linkedin.com/in/minigna
+</a>
+
+<br><br>
+
 Email: lamamanu8970@gmail.com
-</p>
 </div>
 
 </section>
 
 <footer>
-<p>© 2026 Manu Maya Lama</p>
+
+© 2026 Manu Maya Lama
+
 </footer>
 
 </body>
+
 </html>
