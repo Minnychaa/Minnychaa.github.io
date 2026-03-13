@@ -1,251 +1,360 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minigna Lama | AoT Biomedical Portfolio</title>
+    <title>Manu M. Lama | Survey Corps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <title>Manu M. Lama | Attack on Titan Dossier</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
+            --corps-green: #2d4a3e;
+            --corps-blue: #3d5a80;
+            --titan-gold: #d4af37;
+            --parchment: #f4f1ea;
             --titan-red: #8b0000;
             --survey-green: #1b2e1e;
             --ink-black: #0a0a0a;
             --paper: #d9d4c7;
             --accent-gold: #c5a059;
-            --dark-red: #4a0000;
-        }
-
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes scanline { 0% { bottom: 100%; } 100% { bottom: 0%; } }
-        @keyframes flicker {
-            0% { opacity: 0.9; } 5% { opacity: 0.5; } 10% { opacity: 0.9; }
-            15% { opacity: 0.8; } 20% { opacity: 1; } 100% { opacity: 1; }
         }
 
         body {
             margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.alphacoders.com/605/605592.jpg'); /* AoT Forest Background */
             font-family: 'Oswald', sans-serif;
             background-color: var(--ink-black);
-            background-image: linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.85)),
-                url('https://wallpaperaccess.com/full/3663733.jpg'); 
+            background-image: 
+                linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.8)),
+                url('https://wallpaperaccess.com/full/3663733.jpg'); /* Eren Founding Titan Vibe */
             background-size: cover;
             background-attachment: fixed;
-            color: var(--paper);
+            color: var(--parchment);
             line-height: 1.6;
+            color: var(--paper);
         }
 
-        /* CRT Screen Overlay */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
+        /* Top Dossier Header */
         header {
             text-align: center;
-            padding: 120px 20px;
-            border-bottom: 8px solid var(--titan-red);
-            background: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.3));
-            animation: flicker 5s infinite;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border: 5px solid var(--paper);
-            outline: 12px solid var(--titan-red);
-            box-shadow: 0 0 40px var(--titan-red);
-            filter: grayscale(100%) contrast(120%);
-            transition: 0.6s;
-            object-fit: cover;
-        }
-
-        .profile-img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.05);
-            outline-color: var(--accent-gold);
-        }
-
-        h1 { font-size: 5rem; text-transform: uppercase; margin: 10px 0; text-shadow: 5px 5px 0px var(--titan-red); }
-        .rank-tag { font-family: 'Special Elite', cursive; color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 5px; }
-
-        section { max-width: 1000px; margin: auto; padding: 80px 20px; }
-
-        .dossier-box {
-            background: rgba(15, 15, 15, 0.95);
-            border: 1px solid var(--paper);
-            padding: 40px;
+            padding: 100px 20px;
+            background: rgba(45, 74, 62, 0.4);
+            backdrop-filter: blur(5px);
+            border-bottom: 3px solid var(--titan-gold);
+            padding: 80px 20px;
+            border-bottom: 4px solid var(--titan-red);
+            background: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.2));
             position: relative;
-            margin-bottom: 60px;
-            animation: fadeIn 1s ease-out both;
+            overflow: hidden;
         }
 
-        .dossier-box::before {
-            content: "TOP SECRET";
+        /* The Wings of Freedom Glow Effect */
+        .profile-container {
+        /* Eren "Attack Titan" Background Text Overlay */
+        header::before {
+            content: "ATTACK TITAN";
             position: absolute;
-            top: -15px; right: 20px;
-            background: var(--titan-red);
-            color: white;
-            padding: 5px 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            top: 0;
+            left: -50px;
+            z-index: 0;
         }
 
-        h2 { 
-            color: var(--accent-gold); 
-            border-bottom: 3px solid var(--titan-red); 
-            padding-bottom: 10px; 
-            text-transform: uppercase; 
-            letter-spacing: 3px;
-            margin-top: 0;
-        }
-
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
-
-        .skill-tag {
-            background: var(--dark-red);
-            padding: 10px 15px;
-            margin: 5px;
+        .profile-wrap {
+            position: relative;
             display: inline-block;
-            font-weight: bold;
-            border: 1px solid var(--paper);
-            transition: 0.3s;
+            z-index: 1;
         }
 
-        .skill-tag:hover { background: var(--accent-gold); color: black; transform: skewX(-10deg); }
+        .profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--titan-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            object-fit: cover;
+            width: 200px;
+            height: 200px;
+            border: 4px solid var(--paper);
+            outline: 8px solid var(--titan-red);
+            margin-bottom: 20px;
+            filter: grayscale(40%) contrast(110%);
+            transition: 0.5s;
+        }
 
-        .entry-title { font-weight: bold; color: var(--accent-gold); font-size: 1.2rem; display: block; }
-        .entry-date { font-family: 'Special Elite', cursive; font-size: 0.9rem; color: #888; margin-bottom: 10px; display: block; }
+        .profile:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: grayscale(0%) sepia(20%);
+            transform: scale(1.05);
+        }
 
-        .btn-action {
-            display: block;
-            width: fit-content;
-            margin: 40px auto;
-            padding: 20px 60px;
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 50px;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            letter-spacing: 3px;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--paper);
+            text-shadow: 4px 4px 0px var(--titan-red);
+        }
+
+        .subtitle {
+            font-family: 'Special Elite', cursive; /* Typewriter style */
+            font-size: 1.2rem;
+            color: var(--titan-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: var(--accent-gold);
+            background: rgba(0,0,0,0.6);
+            display: inline-block;
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+
+        section {
+            max-width: 850px;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            border-left: 5px solid var(--corps-blue);
+            padding-left: 15px;
+            margin-top: 50px;
+            color: var(--titan-gold);
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "⚔️";
+            margin-left: 10px;
+            font-size: 1.2rem;
+            padding: 50px 20px;
+        }
+
+        /* Infographic Card Style */
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            background: rgba(20, 20, 20, 0.8);
+            border-left: 10px solid var(--titan-red);
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Angled bottom */
+        }
+
+        /* "Slicing" effect on hover */
+        .card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(10px);
+            border-left: 5px solid var(--titan-gold);
+        h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--paper);
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .skills span {
+            display: inline-block;
+            background: var(--corps-green);
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--titan-gold);
+            transition: 0.3s;
+        /* Grid for Technical Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .skills span:hover {
+            background: var(--corps-blue);
+            transform: translateY(-3px);
+        .skills-grid span {
             background: var(--titan-red);
             color: white;
-            text-decoration: none;
+            padding: 10px;
+            text-align: center;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            border: 3px solid var(--paper);
-            box-shadow: 8px 8px 0px black;
-            transition: 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
-        .btn-action:hover { box-shadow: 0px 0px 20px var(--titan-red); transform: scale(1.05); background: var(--paper); color: black; }
+        a {
+            color: var(--titan-gold);
+            text-decoration: none;
+        /* Action Button */
+        .btn-expedition {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--paper);
+            border: 2px solid var(--paper);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-        footer { text-align: center; padding: 100px 20px; background: rgba(0,0,0,0.9); border-top: 5px solid var(--titan-red); }
+        a:hover {
+            color: white;
+            text-shadow: 0 0 10px var(--titan-gold);
+        .btn-expedition:hover {
+            background: var(--paper);
+            color: var(--ink-black);
+            box-shadow: 0 0 20px var(--titan-red);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            margin-top: 60px;
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 2px solid var(--corps-green);
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Add a "Shinzou wo Sasageyo" button style */
+        .resume-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--corps-blue);
+            color: white !important;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--titan-gold);
+            padding: 100px 20px;
+            font-family: 'Special Elite', cursive;
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <img src="YOUR_PHOTO.jpg" class="profile-img" alt="Minigna Lama">
-    <h1>MINIGNA LAMA</h1>
-    <div class="rank-tag">B.S. BIOLOGICAL ENGINEERING | CRM SPECIALIST</div>
+    <div class="profile-container">
+        <img src="profile.jpg" class="profile" alt="Manu Maya Lama">
+    <div class="profile-wrap">
+        <img src="profile.jpg" class="profile" alt="Manu Lama (MINNY)">
+        <h1>Manu Maya Lama</h1>
+        <p class="subtitle">Unit: Biomedical Engineering | Cardiac Research</p>
+    </div>
+    <h1>Manu Maya Lama</h1>
+    <p class="subtitle">Biomedical Engineer | Survey Corps CRM Trainee</p>
 </header>
 
 <section>
-    <div class="dossier-box">
-        <h2>Personnel Identification</h2>
-        <div class="grid">
-            <div>
-                <p><strong>SUBJECT:</strong> Manu Maya Lama (Minigna)</p>
-                <p><strong>LOCATION:</strong> University of Idaho [cite: 6]</p>
-                <p><strong>STATUS:</strong> BS Biological Engineering Candidate (Expected May 2026) [cite: 6, 8]</p>
-                <p><strong>ACADEMICS:</strong> GPA 3.5/4.0 | Dean's List Distinction [cite: 6]</p>
-            </div>
-            <div>
-                <p style="font-family: 'Special Elite', cursive; border-left: 2px solid var(--accent-gold); padding-left: 15px;">
-                    "Dedicate your heart to the machine. Seeking to bridge the gap between human tissue engineering and cardiac electronics."
-                </p>
-            </div>
+    <h2>About Me</h2>
+    <h2>Personnel Dossier</h2>
+    <div class="card">
+        Biological Engineering student at the University of Idaho. Like a scout beyond the walls, I explore <b>musculoskeletal tissue engineering</b> and <b>cardiac rhythm management</b>. Dedicated to humanity's progress through medical device innovation.
+        <p style="font-family: 'Special Elite', sans-serif;">
+            [SUBJECT DATA]: Biological Engineering student at the University of Idaho. 
+            Focusing on the "Evolution of the Human Machine." Researching musculoskeletal 
+            tissue engineering and cardiac rhythm management. Like the Scout Regiment, 
+            seeking knowledge beyond the current walls of medical technology.
+        </p>
+    </div>
+
+    <h2>Research Expedition</h2>
+    <h2>Current Expedition</h2>
+    <div class="card">
+        <b>Tissue Engineering Laboratory</b><br>
+        Investigating cell self-assembly models—analyzing muscle formation with the precision of a Titan researcher. Mastered ELISA, BCA protein assays, and bioreactor calibration.
+        Studying muscle formation and cell self-assembly. Utilizing bioreactor calibration 
+        and microscopy to push the boundaries of human biology.
+    </div>
+
+    <h2>Clinical Training</h2>
+    <h2>Clinical Intel</h2>
+    <div class="card">
+        Shadowing at the Cardiac Catheterization Lab. Observing pacemaker procedures and lead implantations. Learning the "wiring" of the human heart.
+        Shadowing at the Cardiac Catheterization Lab. Observing pacemaker generator 
+        replacements and transvenous lead implantations. Analyzing device workflow 
+        with surgical precision.
+    </div>
+
+    <h2>Publications</h2>
+    <h2>Technical Armory</h2>
+    <div class="card">
+        <i>"Directed cell self-assembly to form tendon and muscle models..."</i><br>
+        <b>Journal of Biomechanical Engineering (2025)</b>
+    </div>
+
+    <h2>Technical Arsenal</h2>
+    <div class="card skills">
+        <span>ECG Interpretation</span>
+        <span>Cardiac Electrophysiology</span>
+        <span>CIED Fundamentals</span>
+        <span>Mammalian Cell Culture</span>
+        <span>SolidWorks</span>
+        <span>Arduino</span>
+        <span>MATLAB</span>
+        <span>Python</span>
+        <div class="skills-grid">
+            <span>ECG Interpretation</span>
+            <span>CIED Fundamentals</span>
+            <span>SolidWorks</span>
+            <span>Arduino</span>
+            <span>MATLAB</span>
+            <span>Python</span>
+            <span>Microscopy</span>
+            <span>Cell Culture</span>
         </div>
     </div>
 
-    <div class="dossier-box" style="border-left: 10px solid var(--titan-red);">
-        <h2>Field Operations: CRM & Clinical</h2>
-        <div class="entry">
-            <span class="entry-title">CARDIAC CATHETERIZATION LAB | ST. JOSEPH REGIONAL MEDICAL CENTER</span>
-            <span class="entry-date">MARCH 2026 – PRESENT [cite: 22]</span>
-            <ul>
-                <li>Shadowing Cardiologists and Medtronic Clinical Specialists during transvenous lead implantations[cite: 23, 24].</li>
-                <li>Analyzing fluoroscopic imaging and anatomical models for lead placement accuracy[cite: 24].</li>
-                <li>Observing remote monitoring configuration for Medtronic CRM systems[cite: 25].</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <span class="entry-title">VIRTUAL PACE ACADEMY (CARDIAC DEVICE TRAINING)</span>
-            <span class="entry-date">16-WEEK INTENSIVE PROGRAM [cite: 16, 29]</span>
-            <ul>
-                <li>Mastering ECG rhythm analysis and cardiac device-rhythm interactions[cite: 27].</li>
-                <li>Training in device sensing assessment and pacing threshold evaluation[cite: 28].</li>
-            </ul>
-        </div>
+    <h2>Military Documents</h2>
+    <h2>Expedition Reports (Resume)</h2>
+    <div class="card" style="text-align: center;">
+        <a href="Manu_Resume.pdf" class="resume-btn" target="_blank">Download Dossier (Resume)</a>
+        <a href="Manu_Resume.pdf" class="btn-expedition" target="_blank">Access Dossier PDF</a>
     </div>
 
-    <div class="dossier-box">
-        <h2>Intelligence Logs: Research & Engineering</h2>
-        <div class="entry">
-            <span class="entry-title">TISSUE ENGINEERING RESEARCH ASSISTANT | UNIVERSITY OF IDAHO</span>
-            <span class="entry-date">JAN 2023 – JAN 2026 [cite: 32]</span>
-            <p>Focused on scaffold-free neo-muscle constructs for musculoskeletal regeneration[cite: 3]. Developed and maintained C3H/10T1/2 and C2C12 mammalian cell lines[cite: 33].</p>
-            <p><strong>PUBLICATION:</strong> <em>Lama, M. M., et al. (2025). Directed cell self-assembly to form tendon and muscle models. Journal of Biomechanical Engineering.</em> </p>
-        </div>
+    <h2>Contact The HQ</h2>
+    <h2>Contact Headquarters</h2>
+    <div class="card">
+        LinkedIn: <a href="https://www.linkedin.com/in/minigna/" target="_blank">linkedin.com/in/minigna</a><br><br>
+        Email: <a href="mailto:lamamanu8970@gmail.com">lamamanu8970@gmail.com</a>
+        LinkedIn: <a href="https://www.linkedin.com/in/minigna/" style="color:var(--accent-gold)">View Profile</a><br>
+        Email: <a href="mailto:lamamanu8970@gmail.com" style="color:var(--accent-gold)">lamamanu8970@gmail.com</a>
     </div>
-
-    <div class="dossier-box" style="background: rgba(27, 46, 30, 0.4);">
-        <h2>Special Operations: Tactical Dance Leadership</h2>
-        <p><strong>GROUP LEADER: 3APM (NEPAL)</strong></p>
-        <p>Commanded the 3APM dance collective, achieving high-ranking honors across national competitions. Demonstrated physical discipline and synchronized leadership.</p>
-        <div class="grid">
-            <ul style="list-style-type: '► ';">
-                <li>Winner: Ani-Dance Competition</li>
-                <li>1st Runner Up: KFN 2k22</li>
-                <li>2nd Runner Up: KWF 2k21</li>
-            </ul>
-            <ul style="list-style-type: '► ';">
-                <li>1st Runner Up: KPOP Vibes 2k19</li>
-                <li>Runner Up: BP Dance Festival</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="dossier-box">
-        <h2>Technical Armory</h2>
-        <h3>CLINICAL & CARDIAC</h3>
-        <div class="skill-tag">ECG/EKG Interpretation [cite: 9]</div>
-        <div class="skill-tag">CIED Fundamentals [cite: 9]</div>
-        <div class="skill-tag">Hemodynamic Monitoring [cite: 9]</div>
-        <div class="skill-tag">Sterile Protocols [cite: 9]</div>
-        
-        <h3>ENGINEERING & SOFTWARE</h3>
-        <div class="skill-tag">SolidWorks [cite: 11]</div>
-        <div class="skill-tag">Arduino Programming [cite: 11]</div>
-        <div class="skill-tag">Python & MATLAB [cite: 11]</div>
-        <div class="skill-tag">Circuit Prototyping [cite: 11]</div>
-        <div class="skill-tag">ImageJ/Fiji [cite: 11]</div>
-    </div>
-
-    <a href="Manu_Resume.pdf" class="btn-action" target="_blank">DEPLOY FULL DOSSIER PDF</a>
-
 </section>
 
 <footer>
-    <p>"SHINZOU WO SASAGEYO"</p>
-    <p>CONTACT: <a href="mailto:lamamanu8970@gmail.com" style="color:var(--accent-gold)">lamamanu8970@gmail.com</a> | +1 (626) 541-4550 [cite: 2]</p>
-    <p>© 2026 MINIGNA LAMA | BIOMEDICAL OPERATIONS</p>
+    DEDICATE YOUR HEART © 2026 MANU MAYA LAMA
+    "If you don't fight, you can't win." <br>
+    © 2026 MANU MAYA LAMA
 </footer>
 
 </body>
-</html>
